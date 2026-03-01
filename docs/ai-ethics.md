@@ -276,6 +276,14 @@ Ethics requirements are embedded in:
 | Task generation | Ethics flags in task metadata          |
 | Release gate    | Ethics checklist must be complete      |
 
+### Implementation Templates
+
+Use these documents as the baseline for compliant AI-feature planning and release checks:
+
+- `docs/prd/PRD_SAFETY_GUIDE.md`
+- `docs/prd/PRD_TEMPLATE.md`
+- `docs/prd/ethics-checklist-template.yml` (copy to repository root as `ethics-checklist.yml`)
+
 ### Enforcement
 
 - PRs missing ethics section are blocked by CI.

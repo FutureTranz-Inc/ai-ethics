@@ -1,0 +1,17 @@
+# Copy this file to repository root as ethics-checklist.yml
+
+ai_involved: false
+product_owner: ""
+technical_owner: ""
+
+ethics_review_completed: false
+bias_assessment_completed: false
+privacy_review_completed: false
+transparency_disclosure_written: false
+
+confidence_threshold_defined: false
+fallback_behavior_defined: false
+audit_logging_enabled: false
+
+# Set release_approved to true only after all required review fields are complete.
+release_approved: false

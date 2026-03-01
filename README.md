@@ -56,6 +56,7 @@ A comprehensive toolkit designed to enforce ethical AI behavior, ensuring AI sys
 - [Installation](#-installation)
 - [Agent Starter Files](#-agent-starter-files)
 - [Quick Start](#-quick-start)
+- [PRD Safety Docs](#-prd-safety-docs)
 - [Architecture](#️-architecture)
 - [Configuration](#️-configuration)
 - [Usage](#-usage)
@@ -282,9 +283,19 @@ The toolkit uses multiple integration approaches:
 4. Verify installation:
 
    ```bash
-   git commit -m "Initial commit"
-   # The hooks will enforce attribution policies
-   ```
+    git commit -m "Initial commit"
+    # The hooks will enforce attribution policies
+    ```
+
+## 🧭 PRD Safety Docs
+
+Use the PRD safety resources in `docs/prd/` when defining AI features and release gates:
+
+- `docs/prd/PRD_SAFETY_GUIDE.md` - Required ethics review expectations and risk controls
+- `docs/prd/PRD_TEMPLATE.md` - Standard PRD template with required `## AI Ethics & Risk` section
+- `docs/prd/ethics-checklist-template.yml` - Template to copy to repository root as `ethics-checklist.yml`
+
+These documents align with the CI workflow that blocks PRs when the PRD ethics section or AI feature checklist requirements are missing.
 
 ## 🏗️ Architecture
 
@@ -295,6 +306,7 @@ ai-ethics/
 ├── docs/                          # Documentation and policies
 │   ├── ai-ethics.md              # Main ethics policy
 │   ├── GOVERNANCE_NOTICE.md      # Governance requirements
+│   ├── prd/                       # PRD safety guides and templates
 │   └── policies/                 # Specific policy documents
 ├── scripts/                       # Automation scripts
 │   ├── hooks/                    # Git hooks for enforcement
@@ -583,6 +595,11 @@ python src/ai_ethics_enforcer.py --type commit abc123
 # Get JSON output
 python src/ai_ethics_enforcer.py --format json file.py
 ```
+
+Security guardrails in the Python enforcer:
+
+- Rejects invalid commit references (including values beginning with `-`) for `--type commit`
+- Skips file content checks above 10 MB to prevent memory exhaustion during scans
 
 #### Programmatic Usage
 

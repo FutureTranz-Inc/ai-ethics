@@ -76,6 +76,9 @@ class AIEthicsEnforcer:
         )
     }
 
+    COMMIT_REF_PATTERN = re.compile(r'^[A-Za-z0-9._/\\-^~]+$')
+    MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024
+
     # Required human attribution patterns
     HUMAN_PATTERNS = {
         'human_author': re.compile(r'Author:\s*[A-Za-z\s]+(?:<[^>]+>)?'),
@@ -188,6 +191,24 @@ class AIEthicsEnforcer:
         """Check a git commit for policy violations"""
         violations = []
 
+        if not commit_hash:
+            violations.append(Violation(
+                violation_type=AttributionViolation.MISSING_HUMAN_ATTRIBUTION,
+                line_number=None,
+                content="Invalid commit reference: empty value",
+                suggestion="Provide a valid git commit reference (for example, HEAD or a commit SHA)."
+            ))
+            return violations
+
+        if commit_hash.startswith('-') or not self.COMMIT_REF_PATTERN.match(commit_hash):
+            violations.append(Violation(
+                violation_type=AttributionViolation.MISSING_HUMAN_ATTRIBUTION,
+                line_number=None,
+                content=f"Invalid commit reference: {commit_hash}",
+                suggestion="Use a valid commit reference and avoid values that begin with '-'"
+            ))
+            return violations
+
         try:
             # Get commit message
             result = subprocess.run(
@@ -248,10 +269,25 @@ class AIEthicsEnforcer:
 
         if target_type == "file":
             try:
-                with open(target, 'r', encoding='utf-8') as f:
-                    content = f.read()
-                self.violations.extend(self.check_code_content(content, target))
-            except (FileNotFoundError, UnicodeDecodeError):
+                file_size = os.path.getsize(target)
+                if file_size > self.MAX_FILE_SIZE_BYTES:
+                    self.violations.append(Violation(
+                        violation_type=AttributionViolation.MISSING_HUMAN_ATTRIBUTION,
+                        line_number=None,
+                        content=(
+                            f"Could not read file: {target} "
+                            f"({file_size} bytes exceeds {self.MAX_FILE_SIZE_BYTES} byte limit)"
+                        ),
+                        suggestion=(
+                            "File exceeds 10MB limit; skipping ethics check "
+                            "to prevent memory exhaustion."
+                        )
+                    ))
+                else:
+                    with open(target, 'r', encoding='utf-8') as f:
+                        content = f.read()
+                    self.violations.extend(self.check_code_content(content, target))
+            except (FileNotFoundError, UnicodeDecodeError, OSError):
                 self.violations.append(Violation(
                     violation_type=AttributionViolation.MISSING_HUMAN_ATTRIBUTION,
                     line_number=None,
@@ -316,9 +352,8 @@ class AIEthicsEnforcer:
             '.md': [],  # Markdown doesn't have code comments
         }
 
-        # Get file extension
-        ext = filename.split('.')[-1] if '.' in filename else ''
-        ext = f'.{ext}'
+        # Get file extension safely
+        ext = os.path.splitext(os.path.basename(filename))[1].lower()
 
         patterns = comment_patterns.get(ext, ['#', '//', '/*'])
 

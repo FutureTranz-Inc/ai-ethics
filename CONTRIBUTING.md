@@ -43,9 +43,11 @@ Thank you for your interest in contributing to the AI Ethics Enforcement Toolkit
 
 1. Ensure your PR follows the template
 2. Update documentation if needed
-3. Add tests for new features
-4. Ensure all CI checks pass
-5. Request review from maintainers
+3. For AI feature work, include a PRD with `## AI Ethics & Risk` and add `ethics-checklist.yml` at repository root
+4. Start from `docs/prd/PRD_TEMPLATE.md` and `docs/prd/ethics-checklist-template.yml` to satisfy required checks
+5. Add tests for new features
+6. Ensure all CI checks pass
+7. Request review from maintainers
 
 ## Development Setup
 
