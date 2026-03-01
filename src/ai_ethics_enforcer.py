@@ -76,7 +76,7 @@ class AIEthicsEnforcer:
         )
     }
 
-    COMMIT_REF_PATTERN = re.compile(r'^[A-Za-z0-9._/\\-^~]+$')
+    COMMIT_REF_PATTERN = re.compile(r'^[A-Za-z0-9._/\\^~@{}:+\-]+$')
     MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024
 
     # Required human attribution patterns
