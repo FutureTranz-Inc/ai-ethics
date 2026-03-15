@@ -789,6 +789,23 @@ npm test
 npm run lint
 ```
 
+### Finding Good First Issues
+
+Looking for a way to contribute? Here's how to find beginner-friendly tasks:
+
+1. **Search for Good First Issue labels**: Visit our [issues page](https://github.com/FutureTranz-Inc/ai-ethics/issues) and filter by the `good first issue` label
+2. **Help Wanted issues**: Also check for `help wanted` labels for other tasks that need community assistance
+3. **Documentation improvements**: Look for issues tagged with `documentation` - these are often great starter tasks
+
+**Suggested starter tasks for new contributors:**
+- Fix typos or improve clarity in documentation
+- Add examples to existing tools
+- Improve error messages
+- Add unit tests for uncovered functions
+- Update README with missing features
+
+Don't worry if you're new to open source - we're happy to help guide you through your first contribution!
+
 ## 👥 Authors & Attribution
 
 ### Core Development Team
