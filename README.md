@@ -33,7 +33,9 @@
 
 ## 🎥 Explainer Video
 
-**[▶️ Watch the AI Ethics Enforcement Toolkit Explainer Video](https://grok.com/imagine/post/3f776139-d192-4f0e-8345-fc0d3ea34776?source=post-page&platform=web)**
+[![Watch the AI Ethics Enforcement Toolkit Explainer Video](https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg)](https://grok.com/imagine/post/3f776139-d192-4f0e-8345-fc0d3ea34776?source=post-page&platform=web)
+
+*Click the image above to watch the explainer video on Grok.*
 
 ---
 
