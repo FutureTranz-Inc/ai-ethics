@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 **Credits:** [FutureTranz-Inc](https://github.com/FutureTranz-Inc) | [victorjquinones](https://github.com/victorjquinones)
 
+## [Unreleased]
+
+### Added
+
+- GROK.md agent starter for xAI Grok, matching the existing Claude, Gemini, GPT, Copilot, and Cursor starters
+- docs/AGENT_INTEGRATION.md as the central index for agent starter files (issue #12)
+- Grok and xAI names in attribution detection for the Python enforcer, CI commit check, and history-cleaner filter
+- tests/test_ai_ethics_enforcer.py covering Grok/xAI co-author and generated-by rejections plus a human co-author pass
+
+### Changed
+
+- README.md and AGENTS.md now list GROK.md and link to the agent integration guide
+- AI_ATTRIBUTION_POLICY.md banned-pattern list and tool-configuration notes include Grok and xAI
+
 ## [1.0.0] - 2025-12-14
 
 ### Added (v1.0.0)
