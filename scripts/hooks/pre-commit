@@ -31,6 +31,7 @@ EXCLUDED_PATHS=(
     "scripts/hooks/pre-commit"
     "scripts/hooks/commit-msg"
     "scripts/ci-check-attribution.sh"
+    "tests/test_ai_ethics_enforcer.py"
 )
 
 # Check whether a file should be excluded from attribution scanning.

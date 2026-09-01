@@ -118,6 +118,11 @@ When conventions conflict, match nearby code and keep diffs minimal.
 - `scripts/ci-check-attribution.sh`: CI guardrail for commit history.
 - `.github/workflows/*.yml`: treat as enforcement contracts; avoid casual drift.
 
+## Agent Starter Files
+
+Root starters for copying into other projects: `CLAUDE.md`, `GEMINI.md`, `GPT.md`, `COPILOT.md`, `CURSOR.md`, `GROK.md`.
+The index is `docs/AGENT_INTEGRATION.md`. Keep those files aligned with `AI_ATTRIBUTION_POLICY.md`.
+
 ## Cursor and Copilot Rule Files
 
 - `.cursorrules`: not found.

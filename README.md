@@ -79,6 +79,9 @@ This repository provides starter files for configuring various LLM agents in you
 - [GPT.md](GPT.md) - Starter configuration for OpenAI's GPT models
 - [COPILOT.md](COPILOT.md) - Starter configuration for GitHub Copilot
 - [CURSOR.md](CURSOR.md) - Starter configuration for Cursor AI editor
+- [GROK.md](GROK.md) - Starter configuration for xAI's Grok
+
+See [docs/AGENT_INTEGRATION.md](docs/AGENT_INTEGRATION.md) for the shared setup rules and a table of every starter file.
 
 ### How to Use
 
@@ -189,7 +192,7 @@ The universal installer supports enforcement across:
 #### Development Environments
 
 - **Editors/IDEs:** VSCode, Cursor, IntelliJ IDEA, Eclipse, Xcode, Vim/Neovim, Emacs, Sublime Text
-- **AI Tools:** GitHub Copilot, Tabnine, Codeium, Kite, Amazon Q, Anthropic Claude
+- **AI Tools:** GitHub Copilot, Tabnine, Codeium, Kite, Amazon Q, Anthropic Claude, xAI Grok
 - **Notebooks:** Jupyter, Google Colab, Kaggle
 
 #### Programming Languages
