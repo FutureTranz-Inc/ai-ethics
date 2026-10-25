@@ -1,5 +1,30 @@
 # Task Log
 
+## Grok Agent Starter and Attribution Coverage
+
+**START LOG:**
+[START]: 20260901174333
+[TASK]: Add GROK.md agent starter, detect Grok/xAI attribution in enforcer and CI, and add a central agent integration guide.
+[AGENT]: FutureTranz Development Team
+[AUTHORITY]: Victor J. Quinones — request to contribute as Grok
+
+[PLANNED ACTIONS]:
+- [x] Add GROK.md starter file matching existing agent starters
+- [x] Add docs/AGENT_INTEGRATION.md index (issue #12)
+- [x] Extend enforcer, CI, and history-cleaner patterns for Grok and xAI
+- [x] Update policy, README, AGENTS.md, and CHANGELOG
+- [x] Add unit tests and verify locally
+
+[EXECUTION LOG]:
+- [20260901174333] Task initialized: START log created before file edits.
+- [20260901174410] Added GROK.md and docs/AGENT_INTEGRATION.md.
+- [20260901174440] Extended enforcer, CI, history cleaner, pre-commit exclusions, and policy text for Grok and xAI.
+- [20260901174520] Unit tests: 7/7 passed. Grok co-author rejected (exit 1); human co-author accepted (exit 0). GROK.md file scan compliant.
+- [20260901174600] Commit and pull request next.
+
+**END LOG:**
+[END]: 20260901174600 | [Duration: 00:02:27] | [Tokens: N/A - multi-turn] | [Summary]: Added GROK.md, an agent integration index, and Grok/xAI attribution detection across the enforcer, CI, and policy docs. Seven unit tests passed locally.
+
 ## AI Attribution Enforcement Hardening
 
 **START LOG:**
