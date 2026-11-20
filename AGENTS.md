@@ -156,3 +156,25 @@ If these files are added later, update this `AGENTS.md` and treat those rule fil
 - `bash scripts/ci-check-attribution.sh`
 
 Keep changes small, verifiable, and aligned with policy enforcement goals.
+
+## Claude Code project instructions
+
+These instructions moved here from CLAUDE.md on 2026-11-20. Claude Code loads this file through the `@AGENTS.md` import in CLAUDE.md.
+
+<!-- Refer to AGENTS.md first. -->
+
+### Claude Agent Starter
+
+This is a starter file for using Claude as an agent in your project. Copy this file to your project's root or agent configuration directory and customize it according to your needs.
+
+#### Instructions
+
+- Ensure you have read and understood AGENTS.md before using this starter.
+- Configure Claude with the guidelines from AGENTS.md.
+- Adapt the rules to your project's specific requirements while maintaining human authorship and policy compliance.
+
+#### Model-Specific Notes
+
+- Claude is developed by Anthropic.
+- Use Claude responsibly, ensuring all outputs reflect human authorship.
+- Avoid any AI attribution in commits or documentation.
