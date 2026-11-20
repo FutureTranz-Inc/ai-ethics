@@ -1,17 +1,5 @@
-<!-- Refer to AGENTS.md first. -->
+@AGENTS.md
 
-# Claude Agent Starter
+# Claude Code instructions
 
-This is a starter file for using Claude as an agent in your project. Copy this file to your project's root or agent configuration directory and customize it according to your needs.
-
-## Instructions
-
-- Ensure you have read and understood AGENTS.md before using this starter.
-- Configure Claude with the guidelines from AGENTS.md.
-- Adapt the rules to your project's specific requirements while maintaining human authorship and policy compliance.
-
-## Model-Specific Notes
-
-- Claude is developed by Anthropic.
-- Use Claude responsibly, ensuring all outputs reflect human authorship.
-- Avoid any AI attribution in commits or documentation.
+AGENTS.md holds every instruction for this repository. Claude Code loads it through the import on the first line of this file. Edit AGENTS.md, not this file. Add a rule here only when it applies to Claude Code alone.
